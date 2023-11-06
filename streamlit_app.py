@@ -1,2 +1,2 @@
 import streamlit as st
-st.write('Hello World 123')
+st.write('Let's get started with ML')
