@@ -1,5 +1,5 @@
 import streamlit as st
-import prophet as prophet
+import prophet 
 from prophet import Prophet
 import numpy as np
 import pandas as pd
