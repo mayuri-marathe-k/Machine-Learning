@@ -1,9 +1,4 @@
 import streamlit as st
-from pip._internal import main as pipmain
-
-pipmain(['install', 'pystan'])
-pipmain(['install', 'prophet'])
-
 from prophet import Prophet
 import numpy as np
 import pandas as pd
