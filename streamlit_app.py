@@ -1,6 +1,9 @@
 import streamlit as st
-python -m pip install pystan
-python -m pip install prophet
+from pip._internal import main as pipmain
+
+pipmain(['install', 'pystan'])
+pipmain(['install', 'prophet'])
+
 from prophet import Prophet
 import numpy as np
 import pandas as pd
