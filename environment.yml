@@ -1,1 +1,3 @@
-prophet
+name: machine-learning
+dependencies:
+- prophet
