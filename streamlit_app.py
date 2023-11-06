@@ -23,8 +23,8 @@ forecast = m.predict(future)
 # fig2 = m.plot_components(forecast)
 
 
-from prophet.plot import plot_plotly, plot_components_plotly
-plot_plotly(m, forecast)
+# from prophet.plot import plot_plotly, plot_components_plotly
+# plot_plotly(m, forecast)
 
 
-plot_components_plotly(m, forecast)
+# plot_components_plotly(m, forecast)
