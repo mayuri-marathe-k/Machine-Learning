@@ -1,5 +1,4 @@
 import streamlit as st
-import pystan
 from prophet import Prophet
 import numpy as np
 import pandas as pd
