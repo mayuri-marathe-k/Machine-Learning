@@ -12,16 +12,13 @@ df['y'] = df['y'].astype(int)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
-# df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%Y-%m-%d').dt.date
-date_sr = pd.to_datetime(pd.Series(df['ds']))
-change_format = date_sr.dt.strftime('%Y-%m-%d')
-st.write(change_format)
+df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%Y-%m-%d')
 # df['ds'] = pd.to_datetime(df['ds'], dayfirst=True)
 buffer = io.StringIO()
 s = df.info(buf=buffer)
 st.write(s)
 # df.loc[(df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
-st.write(df)
+# st.write(df)
 # m = Prophet()
 # m.fit(df)
 # future = m.make_future_dataframe(33, freq='D')
