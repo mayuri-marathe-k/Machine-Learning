@@ -4,6 +4,8 @@ import pandas as pd
 from prophet import Prophet
 
 df = pd.read_csv("sample.csv")
+df.replace([np.inf, -np.inf], np.nan)
+df.dropna(inplace=True)
 df.dropna(how='any',axis=0)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
