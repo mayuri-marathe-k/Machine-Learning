@@ -12,6 +12,7 @@ df['y'] = df['y'].astype(int)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
+pd.to_datetime(df['ds'])
 pd.to_datetime(df['ds']).dt.strftime('%y-%m-%d')
 
 # df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%m/%d/%Y')
