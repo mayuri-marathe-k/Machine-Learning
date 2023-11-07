@@ -1,2 +1,0 @@
-streamlit
-git+https://github.com/prophet.git@main#egg=prophet
