@@ -1,5 +1,5 @@
 import streamlit as st
-from prophet import Prophet
+# from prophet import Prophet
 import numpy as np
 import pandas as pd
 
@@ -10,9 +10,9 @@ df[df['Leave Type'].isin(['Personal Time Off'])]
 # df['y'] = df['y'].astype(int)
 # df['ds'] = pd.to_datetime(df['ds'])
 df.loc[(df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
-m = Prophet()
-m.fit(df)
-future = m.make_future_dataframe(33, freq='D')
+# m = Prophet()
+# m.fit(df)
+# future = m.make_future_dataframe(33, freq='D')
 # display(future)
 # future
 
