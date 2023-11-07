@@ -7,8 +7,7 @@ df = pd.read_csv("sample.csv")
 df.replace([np.inf, -np.inf], np.nan)
 df.dropna(inplace=True)
 df.dropna(how='any',axis=0)
-st.write(df.info())
-# df['y'] = df['y'].astype(int)
+df['y'] = df['y'].astype(int)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
