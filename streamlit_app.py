@@ -1,5 +1,5 @@
 import streamlit as st
-# from prophet import Prophet
+from prophet import Prophet
 import numpy as np
 import pandas as pd
 
@@ -16,7 +16,7 @@ df.loc[(df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
 # display(future)
 # future
 
-forecast = m.predict(future)
+# forecast = m.predict(future)
 # forecast
 # forecast['yhat'].sum()
 # fig1 = m.plot(forecast)
