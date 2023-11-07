@@ -13,7 +13,7 @@ df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
 
-pd.to_datetime(df['ds'], format='%Y-%m-%d')
+pd.to_datetime(df['ds'], format='ISO8601')
 buffer = io.StringIO()
 df.info(buf=buffer)
 s = buffer.getvalue()
