@@ -10,9 +10,9 @@ df[df['Leave Type'].isin(['Personal Time Off'])]
 # df['y'] = df['y'].astype(int)
 # df['ds'] = pd.to_datetime(df['ds'],format='mixed', dayfirst=True)
 
-df['ds'] = pd.to_datetime(df.ds)
+# df['ds'] = pd.to_datetime(df.ds)
 
-df['ds'] = df['ds'].dt.strftime('%Y-%m-%d %H:%M')
+# df['ds'] = df['ds'].dt.strftime('%Y-%m-%d %H:%M')
 
 # df.loc[(df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
 st.write(df)
