@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import io
 from prophet import Prophet
 
 df = pd.read_csv("sample.csv")
