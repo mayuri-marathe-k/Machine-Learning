@@ -14,12 +14,12 @@ df[df['Leave Type'].isin(['Personal Time Off'])]
 
 df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%Y-%m-%d')
 # df['ds'] = pd.to_datetime(df['ds'], dayfirst=True)
-buffer = io.StringIO()
-df.info(buf=buffer)
-s = buffer.getvalue()
-st.text(s)
+# buffer = io.StringIO()
+# df.info(buf=buffer)
+# s = buffer.getvalue()
+# st.text(s)
 # df.loc[(df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
-# st.write(df)
+st.write(df)
 # m = Prophet()
 # m.fit(df)
 # future = m.make_future_dataframe(33, freq='D')
