@@ -13,6 +13,7 @@ df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
 df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%Y-%m-%d').dt.date
+df['ds'] = pd.to_datetime(df3['ds'], dayfirst=True)
 buffer = io.StringIO()
 df.info(buf=buffer)
 s = buffer.getvalue()
