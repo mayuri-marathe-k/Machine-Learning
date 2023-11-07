@@ -1,7 +1,7 @@
 import streamlit as st
-from prophet import Prophet
 import numpy as np
 import pandas as pd
+from prophet import Prophet
 
 df = pd.read_csv("sample.csv")
 df.dropna(how='any',axis=0)
