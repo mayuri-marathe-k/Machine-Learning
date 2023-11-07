@@ -4,3 +4,5 @@ channels:
   - defaults
 dependencies:
 - prophet
+- numpy
+- pandas
