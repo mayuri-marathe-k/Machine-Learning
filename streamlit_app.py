@@ -12,11 +12,12 @@ df['y'] = df['y'].astype(int)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
+
+pd.to_datetime(df['ds'])
 buffer = io.StringIO()
 df.info(buf=buffer)
 s = buffer.getvalue()
 st.text(s)
-pd.to_datetime(df['ds'])
 pd.to_datetime(df['ds']).dt.strftime('%y-%m-%d')
 
 # df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%m/%d/%Y')
