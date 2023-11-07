@@ -1,3 +1,6 @@
 name: machine-learning
+channels:
+  - conda-forge
+  - defaults
 dependencies:
 - prophet
