@@ -1,10 +1,13 @@
 name: machine-learning
 channels:
-  - conda-forge
-  - defaults
+- defaults
+- conda-forge
 dependencies:
-- numpy
+- python=3.8
+- conda
 - pandas
+- numpy
+- pip
 - pip:
   - streamlit
   - prophet
