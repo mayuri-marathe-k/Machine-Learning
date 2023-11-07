@@ -12,8 +12,8 @@ df['y'] = df['y'].astype(int)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
-df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%Y-%m-%d').dt.date
-df['ds'] = pd.to_datetime(df['ds'], dayfirst=True)
+df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%Y-%m-%d')
+df['ds'] = pd.to_datetime(df['ds'], dayfirst=True).dt.date
 # buffer = io.StringIO()
 # df.info(buf=buffer)
 # st.write(s)
