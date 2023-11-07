@@ -8,7 +8,7 @@ df.dropna(how='any',axis=0)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 # df['y'] = df['y'].astype(int)
-df['ds'] = pd.to_datetime(df['ds'],format='ISO8601')
+df['ds'] = pd.to_datetime(df['ds'],format='mixed', dayfirst=True)
 # df.loc[(df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
 st.write(df)
 # m = Prophet()
