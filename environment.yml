@@ -7,7 +7,7 @@ dependencies:
 - conda
 - pandas
 - numpy
-- pip
+- -m pip
 - pip:
   - streamlit
   - prophet
