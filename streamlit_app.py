@@ -7,14 +7,15 @@ df = pd.read_csv("sample.csv")
 df.replace([np.inf, -np.inf], np.nan)
 df.dropna(inplace=True)
 df.dropna(how='any',axis=0)
+df['y'] = df['y'].astype(int)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
-df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%Y-%m-%d').dt.date
+# df['ds'] = pd.to_datetime(df['ds'], errors='coerce',dayfirst=False, format='%Y-%m-%d').dt.date
 
-df['y'] = df['y'].astype(int)
+# df['y'] = df['y'].astype(int)
 
-df.loc[(df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
+# df.loc[(df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
 st.write(df)
 # m = Prophet()
 # m.fit(df)
