@@ -16,3 +16,7 @@ df[df['Leave Type'].isin(['Personal Time Off'])]
 
 
 df['ds'] = pd.to_datetime(df['ds'], errors='coerce', format='%Y-%m-%d')
+buffer = io.StringIO()
+df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)
