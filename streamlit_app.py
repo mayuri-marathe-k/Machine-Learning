@@ -19,7 +19,7 @@ new_df = df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Persona
 # st.text(s)
 
 
-
+st.write(new_df)
 m = Prophet()
 m.fit(new_df)
 future = m.make_future_dataframe(33, freq='D')
