@@ -22,5 +22,10 @@ new_df = df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Persona
 
 m = Prophet()
 m.fit(new_df)
-future = m.make_future_dataframe(33, freq='D')
+future = m.make_future_dataframe(60, freq='D')
 st.write(future)
+
+
+forecast = m.predict(future)
+cnt = forecast['yhat'].sum()
+st.write(cnt)
