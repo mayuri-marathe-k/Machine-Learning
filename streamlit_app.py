@@ -32,8 +32,8 @@ forecast = m.predict(future)
 st.write(forecast[['ds','yhat']])
 cnt = forecast['yhat'].sum()
 
-plot_plotly(m, forecast)
+# plot_plotly(m, forecast)
 
 
-plot_components_plotly(m, forecast)
+# plot_components_plotly(m, forecast)
 st.write(cnt)
