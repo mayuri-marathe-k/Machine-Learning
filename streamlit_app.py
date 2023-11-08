@@ -19,11 +19,10 @@ new_df = df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Persona
 # st.text(s)
 
 st.write(new_df)
-# pf = new_df.groupby('ds').agg({'y': ['sum']})
 pf = new_df.groupby(['ds'])['y'].sum()
 st.write(pf)
 m = Prophet()
-m.fit(new_df)
+m.fit(pf)
 future = m.make_future_dataframe(33, freq='D')
 
 
