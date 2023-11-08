@@ -16,7 +16,7 @@ df[df['Leave Type'].isin(['Personal Time Off'])]
 
 
 df['ds'] = pd.to_datetime(df['ds'], format='mixed')
-st.write(df['ds'])
+st.write(df)
 buffer = io.StringIO()
 df.info(buf=buffer)
 s = buffer.getvalue()
