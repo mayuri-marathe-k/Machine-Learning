@@ -13,10 +13,7 @@ df['y'] = df['y'].astype(int)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
-s = 1236472051807 / 1000.0
-t = datetime.datetime.fromtimestamp(df['ds']).strftime('%Y-%m-%d %H:%M:%S.%f')
-
-st.write(t)
+pd.to_datetime(pd.Series([df['ds']]), format="%m/%d/%Y")
 
 # pd.to_datetime(df['ds'], format='mixed')
 # pd.to_datetime(df['ds'], errors='coerce')
