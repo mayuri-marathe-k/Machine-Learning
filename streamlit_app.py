@@ -11,7 +11,6 @@ df.dropna(inplace=True)
 df.dropna(how='any',axis=0)
 df['y'] = df['y'].astype(int)
 df['ds'] = pd.to_datetime(df['ds'], format='mixed')
-st.write(df['ds'])
 df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Personal Time Off']))]
 
 # leave = df[df['Leave Type'].isin(['Personal Time Off'])]
