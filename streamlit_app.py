@@ -6,6 +6,7 @@ import datetime
 from prophet import Prophet
 
 df = pd.read_csv("sample.csv")
+st.write(df)
 df.replace([np.inf, -np.inf], np.nan)
 df.dropna(inplace=True)
 df.dropna(how='any',axis=0)
