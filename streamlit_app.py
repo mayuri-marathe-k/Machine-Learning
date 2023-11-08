@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from prophet import Prophet
-from prophet.plot import plot_plotly, plot_components_plotly
 
 df = pd.read_csv("sample.csv")
 
@@ -31,9 +30,4 @@ future = m.make_future_dataframe(33, freq='D')
 forecast = m.predict(future)
 st.write(forecast[['ds','yhat']])
 cnt = forecast['yhat'].sum()
-
-# plot_plotly(m, forecast)
-
-
-# plot_components_plotly(m, forecast)
 st.write(cnt)
