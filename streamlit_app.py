@@ -15,8 +15,19 @@ df[df['Leave Type'].isin(['Personal Time Off'])]
 
 
 
-df['ds'] = pd.to_datetime(df['ds'], infer_datetime_format=True)
+def autoconvert_datetime(value):
+    formats = ['%m/%d/%Y', '%m-%d-%y']  # formats to try
+    result_format = '%Y-%m-%d'  # output format
+    for dt_format in formats:
+        try:
+            dt_obj = datetime.strptime(value, dt_format)
+            return dt_obj.strftime(result_format)
+        except Exception as e:  # throws exception when format doesn't match
+            pass
+    return value  # let it be if it doesn't match
 
+df['ds'] = df['ds'].apply(autoconvert_datetime)
+st.write(df['ds'])
 # pd.to_datetime(df['ds'], format='mixed')
 # pd.to_datetime(df['ds'], errors='coerce')
 buffer = io.StringIO()
