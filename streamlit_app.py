@@ -20,7 +20,7 @@ new_df = df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Persona
 
 st.write(new_df)
 # pf = new_df.groupby('ds').agg({'y': ['sum']})
-pf = new_df.groupby(['ds'])['y'].sum().reset_index()
+pf = new_df.groupby(['ds'])['y'].sum()
 st.write(pf)
 m = Prophet()
 m.fit(new_df)
