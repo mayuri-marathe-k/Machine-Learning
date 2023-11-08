@@ -12,7 +12,7 @@ df.dropna(inplace=True)
 df.dropna(how='any',axis=0)
 df['y'] = df['y'].astype(int)
 df['ds'] = pd.to_datetime(df['ds'], format='mixed')
-st.write(df)
+
 new_df = df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Personal Time Off'])) & (df['ds'] >= '2023-01-01') & (df['ds'] < '2023-11-30')]
 
 # buffer = io.StringIO()
@@ -20,7 +20,7 @@ new_df = df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Persona
 # s = buffer.getvalue()
 # st.text(s)
 
-st.write(new_df)
+
 pf = new_df.groupby(['ds'])['y'].sum().reset_index()
 st.write(pf)
 m = Prophet()
