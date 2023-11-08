@@ -13,13 +13,12 @@ df['y'] = df['y'].astype(int)
 df['ds'] = pd.to_datetime(df['ds'], format='mixed')
 df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Personal Time Off']))]
 
-# leave = df[df['Leave Type'].isin(['Personal Time Off'])]
-# st.write(leave)
-
-
-# df['ds'] = pd.to_datetime(df['ds'], format='mixed')
-# st.write(df['ds'])
 buffer = io.StringIO()
 df.info(buf=buffer)
 s = buffer.getvalue()
 st.text(s)
+
+m = Prophet()
+m.fit(df)
+future = m.make_future_dataframe(33, freq='D')
+st.write(future)
