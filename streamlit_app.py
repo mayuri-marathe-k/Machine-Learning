@@ -10,9 +10,10 @@ df.replace([np.inf, -np.inf], np.nan)
 df.dropna(inplace=True)
 df.dropna(how='any',axis=0)
 df['y'] = df['y'].astype(int)
-df[df['Status'].isin(['Approved'])]
-df[df['Leave Type'].isin(['Personal Time Off'])]
-
+df['Status'] = df[df['Status'].isin(['Approved'])]
+st.write(df['Status'])
+df['Leave Type'] = df[df['Leave Type'].isin(['Personal Time Off'])]
+st.write(df['Leave Type'])
 
 
 df['ds'] = pd.to_datetime(df['ds'], format='mixed')
