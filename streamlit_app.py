@@ -13,7 +13,9 @@ df['y'] = df['y'].astype(int)
 df[df['Status'].isin(['Approved'])]
 df[df['Leave Type'].isin(['Personal Time Off'])]
 
-pd.to_datetime(pd.Series([df['ds']]), format="%m/%d/%Y")
+
+
+df['ds'] = pd.to_datetime(df['ds'], infer_datetime_format=True)
 
 # pd.to_datetime(df['ds'], format='mixed')
 # pd.to_datetime(df['ds'], errors='coerce')
