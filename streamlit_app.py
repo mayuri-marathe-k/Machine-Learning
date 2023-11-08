@@ -10,7 +10,7 @@ df.replace([np.inf, -np.inf], np.nan)
 df.dropna(inplace=True)
 df.dropna(how='any',axis=0)
 df['y'] = df['y'].astype(int)
-df[((df['Status'].isin(['Approved'])) & (df[df['Leave Type'].isin(['Personal Time Off']))]
+df[(df['Status'].isin(['Approved'])) & (df['Leave Type'].isin(['Personal Time Off']))]
 
 # leave = df[df['Leave Type'].isin(['Personal Time Off'])]
 # st.write(leave)
