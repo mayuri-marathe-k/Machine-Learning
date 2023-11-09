@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import math
 from prophet import Prophet
 
 df = pd.read_csv("sample.csv")
@@ -29,5 +30,6 @@ future = m.make_future_dataframe(33, freq='D')
 
 forecast = m.predict(future)
 st.write(forecast[['ds','yhat']])
+
 cnt = forecast['yhat'].sum()
-st.write(cnt)
+st.write(math.ceil(cnt))
