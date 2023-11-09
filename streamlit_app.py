@@ -29,7 +29,6 @@ future = m.make_future_dataframe(33, freq='D')
 
 
 forecast = m.predict(future)
-math.ceil(forecast['yhat'])
 st.write(forecast[['ds','yhat']])
 
 cnt = forecast['yhat'].sum()
